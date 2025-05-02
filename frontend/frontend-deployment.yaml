@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: jiome
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: ghcr.io/manwolframio/cdn-frontend:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: BACKEND_ADDR
+          value: "cdn-ingress-controller.jiome.svc.cluster.local"
+        - name: BACKEND_PORT
+          value: "80"
+

@@ -1,0 +1,6 @@
+# En este fichero se crea el namespace donde se realizará el despliegue
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jiome
+

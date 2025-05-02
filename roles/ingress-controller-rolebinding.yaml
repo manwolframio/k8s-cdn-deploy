@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ingress-controller-rolebinding
+  namespace: jiome
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: jiome
+roleRef:
+  kind: Role
+  name: ingress-controller-role
+  apiGroup: rbac.authorization.k8s.io
+

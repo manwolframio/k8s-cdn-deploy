@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: varnish-deployment
+  namespace: jiome
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: varnish
+  template:
+    metadata:
+      labels:
+        app: varnish
+    spec:
+      containers:
+      - name: varnish
+        image: ghcr.io/manwolframio/cdn-varnish-cache:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: BACKEND_HOST
+          value: "backend-ingress-controller.jiome.svc.cluster.local"
+        - name: BACKEND_PORT
+          value: "80"
