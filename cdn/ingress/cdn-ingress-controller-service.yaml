@@ -4,7 +4,7 @@ metadata:
   name: cdn-ingress-controller
   namespace: jiome
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: cdn-ingress-controller
   ports:
