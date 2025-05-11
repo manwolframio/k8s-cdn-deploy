@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-canary
+  namespace: jiome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      canary: "true"
+  template:
+    metadata:
+      labels:
+        app: backend
+        canary: "true"
+    spec:
+      containers:
+      - name: backend
+        image: ghcr.io/manwolframio/cdn-backend:v2.5
+
