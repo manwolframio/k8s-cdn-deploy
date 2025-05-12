@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: varnish
-        image: ghcr.io/manwolframio/cdn-varnish-cache:latest
+        image: ghcr.io/manwolframio/cdn-varnish-cache:v3.0
         ports:
         - containerPort: 80
         env:
