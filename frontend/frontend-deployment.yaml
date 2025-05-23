@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ghcr.io/manwolframio/cdn-frontend:latest
+        image: ghcr.io/manwolframio/multiplatform-cdn-frontend:latest
         ports:
         - containerPort: 80
         env:

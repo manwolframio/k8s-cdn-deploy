@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ghcr.io/manwolframio/cdn-backend:v2.1
+        image: ghcr.io/manwolframio/multiplatform-cdn-backend:v2.1
         ports:
         - containerPort: 5200
 
